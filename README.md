@@ -22,9 +22,38 @@ For last two parameters you decide that your scan range like **192.168.1.0-192.1
 **Then the magic begins...**
 ## Example Uses and ScrenShoots:
 
-You can start executing the program :
+### You can start executing the program :
 
 ![capture](https://user-images.githubusercontent.com/23013987/38173477-d683f532-35c7-11e8-9fba-a9c9ab9eb24e.JPG)
+
+### You give the filename:
+
+![image](https://user-images.githubusercontent.com/23013987/38173505-1a1bd10c-35c8-11e8-9470-019f761d1d36.png)
+
+
+### You give the ip :
+
+![image](https://user-images.githubusercontent.com/23013987/38173525-3f672ec0-35c8-11e8-922f-9dd6bdf787fd.png)
+
+### You give the range that you want to scan:
+
+![image](https://user-images.githubusercontent.com/23013987/38173540-6fcb5276-35c8-11e8-8da9-33cf0351459e.png)
+
+### Your reslts will return like:
+
+![image](https://user-images.githubusercontent.com/23013987/38173557-a8369300-35c8-11e8-8d3a-c1ef59bb1dfc.png)
+
+### Your output files looklike:
+
+![image](https://user-images.githubusercontent.com/23013987/38173575-fbabfb1a-35c8-11e8-858a-e031d4766a43.png)
+
+
+### Inside of an output file:
+
+![image](https://user-images.githubusercontent.com/23013987/38173579-12deb49e-35c9-11e8-9047-382f8d59646a.png)
+
+
+
 
 
 
