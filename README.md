@@ -1,27 +1,22 @@
 # IPScanner-Powershell
 
-Powershell IP Scanner Uygulaması
+Powershell IP Scanner Applicattion
 
-Örnek Çıktı:
+You can scan both internal and external ip ranges with this Program. For the details read below:
 
-Subnet: : 1.1.1
+How an Usual IP Scanner Work?
 
-Baslangic: : 1
 
-Bitis: : 3
 
-IP      Name Response
+How You Give Parameters To This Powershell Program?
 
---      ---- --------
 
-192.168.1.1          True
 
-192.168.1.2          False
 
-192.168.1.3          True
 
-@{IP=192.168.1.1; Name=; Response=True}
+Example Uses and ScrenShoots:
 
-@{IP=192.168.1.2; Name=; Response=False}
 
-@{IP=192.168.1.3; Name=; Response=True}
+
+
+
