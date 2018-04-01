@@ -2,7 +2,7 @@
 
 ## Powershell IP Scanner Applicattion
 
-You can scan both internal and external ip ranges with this Program. For the details read below:
+You can scan both internal and external ip adresses with this Program. For the details read below:
 
 ## How IP Scanner Work?
 An usual ip scanner works like ping scan method. First you send ICMP ping request to the host(s) which, you want to check is it alive, than if the host(s) reply you back, it means that it is alive. Moreover this program can detect the user name if it is sharing. Besides **IpScannerV2** also creates 3 different txt files that makes your job easier. First output file is taken it's name with the first input. It is written that whole results of **IpScanner**. The second output name is canli and this output gives you just the living host(s). The third outut is cansiz and it gives you the host which is not alive or close to the icmp requests.  
