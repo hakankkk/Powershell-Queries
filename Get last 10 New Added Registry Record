@@ -1,0 +1,15 @@
+Get-WinEvent -FilterHashtable @{Logname='Security'; ID=4657} -MaxEvents 10 | Select-Object TimeCreated, Message | ForEach-Object {
+    $EventMessage = $_.Message
+    $EventMessage -match 'Subject:\s*Account Name:\s*(?<accountName>[^,]*).*\n\s*Account Domain:\s*(?<accountDomain>[^\n]*).*\n\s*Process Information:\s*\n\s*Process Name:\s*(?<processName>[^\n]*).*\n\s*Process ID:\s*(?<processID>[^\s]*).*\n\s*Object Name:\s*(?<objectName>[^\n]*).*\n\s*Object Type:\s*(?<objectType>[^\n]*).*\n\s*Handle ID:\s*(?<handleID>[^\s]*)' > $null
+    $props = @{
+        TimeCreated = $_.TimeCreated
+        AccountName = $Matches.accountName
+        AccountDomain = $Matches.accountDomain
+        ProcessName = $Matches.processName
+        ProcessID = $Matches.processID
+        ObjectName = $Matches.objectName
+        ObjectType = $Matches.objectType
+        HandleID = $Matches.handleID
+    }
+    New-Object PSObject -Property $props
+}
