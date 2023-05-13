@@ -1,0 +1,13 @@
+$processName = Read-Host "Enter process name"
+
+# Search for the process name in the registry
+$path = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Run"
+$item = Get-ItemProperty -Path $path | Where-Object { $_.PSChildName -eq $processName }
+
+if ($item) {
+    # If the registry entry exists, delete it
+    Remove-ItemProperty -Path $path -Name $processName
+    Write-Host "Registry entry for $processName deleted."
+} else {
+    Write-Host "Registry entry for $processName not found."
+}
