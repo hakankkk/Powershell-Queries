@@ -1,8 +1,19 @@
-Some Usefull Powershell scripts that helps you while triaging on Incident Response.
+# Some Usefull Powershell scripts that helps you while triaging on Incident Response.
 
-# IPScanner-Powershell
+<br />
+<br />
 
-## Powershell IP Scanner Applicattion
+# I tried to write some basic script for helping me on IR or TH activities
+
+<br />
+<br />
+<br />
+<br />
+----------------------------------------------------------
+
+## IPScanner-Powershell
+
+### Powershell IP Scanner Applicattion
 
 You can scan both internal and external ip adresses with this Program. For the details read below:
 
