@@ -1,0 +1,7 @@
+$path = Read-Host "Enter the full path to the file"
+if (Test-Path $path -PathType Leaf) {
+    $hash = Get-FileHash -Path $path -Algorithm SHA256
+    Write-Host "SHA-256 hash of $path is" $hash.Hash
+} else {
+    Write-Host "$path is not a valid file path"
+}
