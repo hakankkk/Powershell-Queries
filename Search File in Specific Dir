@@ -1,0 +1,14 @@
+$dir = Read-Host "Enter the directory path"
+$searchString = Read-Host "Enter the search string"
+
+if (Test-Path $dir -PathType Container) {
+    $results = Get-ChildItem -Path $dir -Recurse | Where-Object {$_.Name -like "*$searchString*"}
+    if ($results.Count -eq 0) {
+        Write-Host "No matches found"
+    } else {
+        Write-Host "Matches found:"
+        $results
+    }
+} else {
+    Write-Host "$dir is not a valid directory path"
+}
