@@ -1,0 +1,11 @@
+$fwPolicy = New-Object -ComObject HNetCfg.FwPolicy2
+
+$fwHistory = $fwPolicy.Get_FirewallRuleHistory() | Select-Object -First 5
+
+$fwHistory | ForEach-Object {
+    Write-Host "Rule Name: $($_.Name)"
+    Write-Host "Changed by: $($_.LocalizedName)"
+    Write-Host "Change time: $($_.ChangeTime)"
+    Write-Host "Change type: $($_.ChangeType)"
+    Write-Host "--------------------------------------------------"
+}
