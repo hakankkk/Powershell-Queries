@@ -1,0 +1,21 @@
+# Prompt user for application name
+$appName = Read-Host "Enter application name"
+
+# Get list of environment variables
+$envVars = [Environment]::GetEnvironmentVariables('User')
+
+# Check if application name is in environment variables
+if ($envVars.Contains($appName)) {
+    # Prompt user to remove the environment variable
+    $remove = Read-Host "$appName is in the environment variables. Do you want to remove it? (y/n)"
+    
+    if ($remove -eq "y") {
+        # Remove environment variable
+        [Environment]::SetEnvironmentVariable($appName, $null, 'User')
+        Write-Host "$appName removed from environment variables."
+    } else {
+        Write-Host "$appName not removed from environment variables."
+    }
+} else {
+    Write-Host "$appName not found in environment variables."
+}
