@@ -1,0 +1,14 @@
+# Prompt the user to enter the directory to search
+$dirToSearch = Read-Host "Enter the directory to search"
+
+# Get all macro-enabled Office documents in the specified directory and its subdirectories
+$files = Get-ChildItem -Path $dirToSearch -Recurse -Include *.docm, *.xlsm, *.pptm | Where-Object { $_.Attributes -ne 'Directory' }
+
+# Loop through each file and check if it contains macros
+foreach ($file in $files) {
+    # Use the Select-String cmdlet to search for the string "Macro" within the file's contents
+    if (Select-String -Path $file.FullName -Pattern "Macro") {
+        # If the file contains macros, print its name and path to the console
+        Write-Host "$($file.Name) contains macros. Path: $($file.FullName)"
+    }
+}
