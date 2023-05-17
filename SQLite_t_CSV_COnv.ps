@@ -1,0 +1,25 @@
+Install-Module -Name SQLite
+
+# Import the SQLite module
+Import-Module -Name SQLite
+
+# Specify the path to the SQLite database file
+$databasePath = "C:\path\to\database.sqlite"
+
+# Specify the name of the table to export to CSV
+$tableName = "my_table"
+
+# Specify the path to the output CSV file
+$outputPath = "C:\path\to\output.csv"
+
+# Connect to the database
+$sqliteConnection = Connect-SQLite -DataSource $databasePath
+
+# Get the data from the table
+$tableData = Invoke-SQLiteQuery -Query "SELECT * FROM $tableName" -Connection $sqliteConnection
+
+# Export the data to CSV
+$tableData | Export-Csv -Path $outputPath -NoTypeInformation
+
+# Close the database connection
+$sqliteConnection.Close()
